@@ -1,0 +1,18 @@
+@(usuarios: List[models.Usuario])
+
+<ul>
+	@if(usuarios != null) {
+		@for(usuario <- usuarios) {
+		<a href="/usuario/@usuario.getId()">
+		<li>@usuario.getUsername()</li>
+		</a>
+		}
+	}
+</ul>
+
+@main("Index") {
+	<form action="lista" method="get">
+		<a href="/">Voltar</a>
+	</form>
+
+}
