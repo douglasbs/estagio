@@ -1,79 +1,48 @@
 @(usuario : models.Usuario)
 
 @main("usuario") {
-
-<form class="form-horizontal" action="/usuario@if(usuario != null){/@usuario.getId()}" method="post">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Cadastro de Usuário</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Login</label>  
-  <div class="col-md-4">
-  <input id="username" name="username" type="text" placeholder="Login" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Senha</label>
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="Senha" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password2">Repita a Senha</label>
-  <div class="col-md-4">
-    <input id="password2" name="password2" type="password" placeholder="Repita a Senha" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="nome">Nome</label>  
-  <div class="col-md-5">
-  <input id="nome" name="nome" type="text" placeholder="Nome" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Button (Double) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="salvar"></label>
-  <div class="col-md-8">
-    <button type="submit" id="salvar" name="salvar" class="btn btn-success">Salvar</button>
-    <button id="cancelar" name="cancelar" class="btn btn-danger">Cancelar</button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-
-<!--
-	<form action="/usuario@if(usuario != null){/@usuario.getId()}" method="post">
-		<label for="username">Usuário</label>
-		<br/>
-		<input type="text" id="username" name="username" value="@if(usuario != null) { @usuario.getUsername() }"/>
-		<br/>
-		<label for="password">Senha</label>
-		<br/>
-		<input type="password" id="password" name="password" value="@if(usuario != null) { @usuario.getPassword() }"/>
-		<br/>
-		<label for="passwordConirm">Confirme a Senha</label>
-		<br/>
-		<input type="password" id="passwordConfirm" name="passwordConfirm"/>
-		<br/>
-		<input type="submit" value="Salvar"/>
-		<br/>
-		<a href="/">Voltar</a>
+<form class="form-horizontal" role="form" action="/usuario@if(usuario != null){/@usuario.getId()}" method="post">
+		<div class="page-header">
+  			<h1>Cadastro de Usuários<small>- Cadastro/Alteração</small></h1>
+		</div>
+		<div id="container-cadastro">
+  			<div class="form-group">
+    			<label for="username" class="col-sm-2 control-label" name="username">Usuário</label>
+    			<div class="col-sm-10">
+   					<input type="text" class="form-control" id="username" name="username" placeholder="Usuário" value="@if(usuario != null) { @usuario.getUsername() }">
+    			</div>
+  			</div>
+  
+  			<div class="form-group">
+    			<label for="password" class="col-sm-2 control-label" name="password">Senha</label>
+    			<div class="col-sm-10">
+   					<input type="password" class="form-control" id="password" name="password" placeholder="Senha" name="password" value="@if(usuario != null) { @usuario.getPassword() }">
+   				</div>
+  			</div>
+  
+  			<div class="form-group">
+    			<label for="passwordRepeat" class="col-sm-2 control-label" name="passwordRepeat">Repita a Senha</label>
+    			<div class="col-sm-10">
+    				<input type="password" class="form-control" id="passwordRepeat" name="passwordRepeat" placeholder="Repita a Senha" name="password" value="@if(usuario != null) { @usuario.getPassword() }">
+    			</div>
+  			</div>
+  
+  			<div class="form-group">
+    			<label for="nome" class="col-sm-2 control-label">Nome</label>
+    			<div class="col-sm-10">
+    				<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" name="password" value="@if(usuario != null) { @usuario.getNome() }">
+    			</div>
+  			</div>
+   
+			<div class="form-group">
+   				<label class="col-sm-3 control-label"></label>
+  				<div class="btn-group">
+    				<button type="submit" class="btn btn-success">Salvar</button>
+  				</div>
+  				<div class="btn-group">
+    				<button type="button" class="btn btn-danger"><a href="/" style="text-decoration:none">Cancelar</a></button>
+  				</div>
+			</div>
+		</div>
 	</form>
--->
 }

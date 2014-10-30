@@ -2,21 +2,18 @@ package models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
 
-@Entity 
+@Entity
 public class Usuario extends Model {
 	private static final long serialVersionUID = -8950828806553001326L;
 
 	@Id //@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 	
 	@Required
 	@Column(nullable = false)
@@ -31,10 +28,10 @@ public class Usuario extends Model {
 	public Usuario() {
 		
 	}
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUsername() {

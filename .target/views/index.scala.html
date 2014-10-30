@@ -2,18 +2,83 @@
 
 @main("Index") {
 <form action="index" method="post">
-	<nav class="navbar navbar-default navbar-static-top" role="navigation">
-  		<div class="container-fluid">
-    		<ul class="nav nav-pills"> 
-      			<li class="active"><a href="/login">Home</a></li>
-      			<li><a href="/usuario">Novo Usuário</a></li>
-      			<li><a href="/listaUsuario">Lista de Usuários</a></li>
-      		</ul>
-		</div>
-	</nav>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <ul class="nav nav-pills"> 
+            <li class="active"><a href="/login">Home</a></li>
+            <li><a href="/usuario">Novo Usuário</a></li>
+            <li><a href="/listaUsuario">Lista de Usuários</a></li>
+          </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="principal">
+      <header class="cabecalho">
+        <button clas="button-calendar" id="button-previous">«</button>
+        <h2 class="labelData">July 2013</h2>
+        <button class="button-calendar" id="button-next">»</button>
+      </header class="cabecalho">
+      <table id="table-campos">
+        <tr>
+          <td>S</td>
+          <td>M</td>
+          <td>T</td>  
+          <td>W</td>
+          <td>Th</td>
+          <td>F</td>
+          <td>S</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td class="selected">17</td>
+          <td>18</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>28</td>
+          <td>29</td>
+          <td>30</td>
+          <td>31</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </form>
 
 }
 <!-- <a href="/listaUsuario">Listar Usuários</a>
-		<br/>  -->
-	
+    <br/>  -->
+  

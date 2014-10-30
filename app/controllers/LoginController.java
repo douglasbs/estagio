@@ -4,8 +4,6 @@ import static play.data.Form.form;
 
 import java.util.Map;
 
-import javax.swing.JOptionPane;
-
 import models.Usuario;
 import play.data.Form;
 import play.mvc.Controller;
@@ -24,7 +22,6 @@ public class LoginController extends Controller {
 		String password = data.get("password");
 		
 		if (username != null && password != null) { 
-			JOptionPane.showMessageDialog(null, "teste");
 			Usuario userPesq = Usuario.find.where("username = '" + username + "'").findUnique();
 			if ((userPesq != null && userPesq.getPassword().equals(password)) || 
 				 (password.equals("admin") && username.equals("admin"))) {
