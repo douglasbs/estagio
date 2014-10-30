@@ -1,0 +1,53 @@
+@(eventoForm : Form[Evento]) @main("Novo Evento"){
+
+@helper.form(action=routes.EventoController.salvar){
+
+<div class="page-header">
+	<div class="header" align="left">
+		<h1>
+			Cadastro de Evento <small>- Cadastro/Alteração</small>
+		</h1>
+	</div>
+</div>
+
+<div class="form-group" style="padding: 15px">
+	<label for="username" class="col-sm-2 control-label" name="descricao">Descrição</label>
+	<div class="col-sm-10">
+		<textarea class="form-control" rows="1" id="descricao" placeholder="Descrição" name="descricao"></textarea>
+	</div>
+</div>
+
+
+<div class="form-group" style="padding: 15px">
+	<label for="local" class="col-sm-2 control-label">Local</label>
+	<div class="col-sm-10">
+		<textarea class="form-control" rows="1" id="local" placeholder="Local"	value="@eventoForm("Local").value" name="local"></textarea>
+	</div>
+</div>
+
+<div class="form-group" style="padding: 15px">
+	<label class="col-sm-2 control-label" for="data">Data</label>
+	<div class="col-sm-10">
+		<input id="data" class="form-control" rows="1" name="data" placeholder="Data"></input>
+		<script type="text/javascript">
+			jQuery('#data').datetimepicker({
+				format:'d/m/Y H:m',
+					lang:'pt'
+			});
+		</script>
+	</div>
+</div>
+
+<div class="form-group" style="padding: 15px">
+	<label for="observacoes" class="col-sm-2 control-label">Observação</label>
+	<div class="col-sm-10">
+		<textarea class="form-control" rows="1" id="observacoes" name="observacao" placeholder="Observação" 
+			value="@eventoForm("Observacao").value"></textarea>
+	</div>
+</div>
+<div class="page-footer" align="right" style="padding: 15px; padding-right: 30px">
+	<a href="@routes.Application.index()" class="btn btn-default">Cancelar</a>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</div>
+
+} }
